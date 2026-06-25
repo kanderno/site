@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qamar Sulu — Женская мусульманская одежда</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --clay:    #7B3F2E;
+      --clay-light: #A05C44;
+      --sand:    #C4A882;
+      --cream:   #F7F2EC;
+      --warm-white: #FDF9F5;
+      --charcoal: #2A2420;
+      --muted:   #8A7A70;
+      --divider: rgba(196,168,130,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 48px;
+      background: rgba(253,249,245,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--divider);
+      transition: padding 0.3s;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .nav-logo-circle {
+      width: 44px;
+      height: 44px;
+      background: var(--clay);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo-circle svg { width: 22px; height: 22px; }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--charcoal);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--clay); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #EFE8DF 0%, var(--warm-white) 60%, #F0E6D8 100%);
+    }
+    .hero-bg-ornament {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(123,63,46,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-bg-ornament2 {
+      position: absolute;
+      left: -120px;
+      bottom: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,168,130,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      text-align: center;
+      max-width: 700px;
+      padding: 160px 32px 100px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 96px);
+      font-weight: 300;
+      line-height: 1.0;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .hero-title span {
+      display: block;
+      font-style: italic;
+      color: var(--clay);
+    }
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 20px;
+      margin-bottom: 48px;
+      letter-spacing: 0.04em;
+    }
+    .hero-cta-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--clay);
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 36px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--clay-light); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--clay);
+      color: var(--clay);
+      text-decoration: none;
+      padding: 15px 36px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      transition: all 0.25s;
+    }
+    .btn-outline:hover { background: var(--clay); color: #fff; }
+
+    /* ── DIVIDER ── */
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 20px 0;
+    }
+    .ornament-divider::before,
+    .ornament-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: var(--divider);
+    }
+    .ornament-divider svg { opacity: 0.5; }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 100px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-circle {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--clay);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      box-shadow: 0 40px 80px rgba(123,63,46,0.18);
+    }
+    .about-circle-inner-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--sand);
+      letter-spacing: 0.2em;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+    .about-circle-ornament {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-style: italic;
+      color: rgba(196,168,130,0.6);
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+    .about-text {}
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 24px;
+    }
+    .section-title em { font-style: italic; color: var(--clay); }
+    .section-body {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 440px;
+    }
+
+    /* ── VALUES ── */
+    .values {
+      background: var(--cream);
+      padding: 100px 48px;
+    }
+    .values-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .values-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--divider);
+    }
+    .value-card {
+      background: var(--cream);
+      padding: 52px 40px;
+      text-align: center;
+    }
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .value-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .value-text {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* ── COLLECTION PLACEHOLDER ── */
+    .collection {
+      padding: 100px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .collection-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .collection-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .collection-card-bg {
+      aspect-ratio: 3/4;
+      background: linear-gradient(145deg, #E8DDD4 0%, #D4C4B4 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+    .collection-card:hover .collection-card-bg {
+      transform: scale(1.02);
+    }
+    .collection-card-bg svg {
+      opacity: 0.25;
+      margin-bottom: 12px;
+    }
+    .collection-placeholder-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+    .collection-card-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(42,36,32,0.65));
+      padding: 40px 24px 24px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .collection-card:hover .collection-card-overlay { opacity: 1; }
+    .collection-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: 0.06em;
+    }
+    .collection-meta {
+      padding: 18px 4px 8px;
+    }
+    .collection-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .collection-tag {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sand);
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--clay);
+      padding: 100px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .contact::after {
+      content: '';
+      position: absolute;
+      bottom: -120px; left: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+      pointer-events: none;
+    }
+    .contact-inner { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+    .contact-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(196,168,130,0.7);
+      margin-bottom: 24px;
+    }
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .contact-title em { font-style: italic; color: var(--sand); }
+    .contact-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 52px;
+      font-weight: 300;
+    }
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    .contact-btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      color: var(--clay);
+      text-decoration: none;
+      padding: 16px 44px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      transition: all 0.25s;
+    }
+    .contact-btn-wa:hover { background: var(--sand); color: #fff; }
+    .contact-btn-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      padding: 16px 44px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      transition: all 0.25s;
+    }
+    .contact-btn-ig:hover { border-color: var(--sand); color: var(--sand); }
+    .contact-phone {
+      margin-top: 36px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.06em;
+    }
+    .contact-phone a {
+      color: var(--sand);
+      text-decoration: none;
+    }
+    .contact-phone a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: var(--sand);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--sand); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .about {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 70px 24px;
+      }
+      .values { padding: 70px 24px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .collection { padding: 70px 24px; }
+      .collection-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .contact { padding: 70px 24px; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .collection-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── SCROLL FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-circle">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 8 C14 8 10 13 10 20 C10 27 14 32 20 32" stroke="#C4A882" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M20 8 C26 8 30 13 30 20 C30 27 26 32 20 32" stroke="#C4A882" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M15 12 Q20 6 25 12" stroke="#C4A882" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <circle cx="20" cy="20" r="2" fill="#C4A882" opacity="0.6"/>
+      </svg>
+    </div>
+    <span class="nav-brand">Qamar Sulu</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#collection">Коллекция</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-ornament"></div>
+  <div class="hero-bg-ornament2"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Женская мусульманская одежда · Астана</p>
+    <h1 class="hero-title">
+      Qamar
+      <span>Sulu</span>
+    </h1>
+    <p class="hero-subtitle">Скромность — это красота,<br>а красота начинается с выбора</p>
+    <div class="hero-cta-row">
+      <a href="https://wa.me/77788327216" target="_blank" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        Написать в WhatsApp
+      </a>
+      <a href="https://www.instagram.com/ai.suluym" target="_blank" class="btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual fade-in">
+    <div class="about-circle">
+      <div class="about-circle-ornament">✦</div>
+      <div class="about-circle-inner-text">
+        Qamar<br>Sulu
+      </div>
+    </div>
+  </div>
+  <div class="about-text fade-in">
+    <span class="section-label">О бренде</span>
+    <h2 class="section-title">Одежда, созданная<br>с <em>душой</em> и заботой</h2>
+    <p class="section-body">
+      Qamar Sulu — это бренд женской мусульманской одежды, где каждая вещь создаётся с любовью и уважением к традициям. Мы верим, что скромность может быть элегантной, а стиль — глубоким.
+      <br><br>
+      Наша одежда — для женщин, которые ценят качество, красоту и следуют своим убеждениям. Мягкие ткани, выверенные силуэты, деликатные детали.
+    </p>
+  </div>
+</section>
+
+<div class="ornament-divider" style="padding: 0 48px;">
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#C4A882"/><circle cx="10" cy="10" r="7" stroke="#C4A882" stroke-width="0.8" stroke-dasharray="3 3"/></svg>
+</div>
+
+<!-- VALUES -->
+<section class="values" id="values">
+  <div class="values-inner">
+    <div class="values-header fade-in">
+      <span class="section-label">Наши ценности</span>
+      <h2 class="section-title">Что делает нас <em>особенными</em></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="14" stroke="#7B3F2E" stroke-width="1.2"/><path d="M12 18 Q18 10 24 18 Q18 26 12 18Z" fill="none" stroke="#7B3F2E" stroke-width="1.2"/></svg>
+        </div>
+        <h3 class="value-title">Скромность</h3>
+        <p class="value-text">Каждая модель соответствует нормам хиджаба — свободный крой, закрытые силуэты и достойный образ.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4 L21 13 L31 13 L23 19 L26 28 L18 22 L10 28 L13 19 L5 13 L15 13 Z" stroke="#7B3F2E" stroke-width="1.2" fill="none"/></svg>
+        </div>
+        <h3 class="value-title">Качество</h3>
+        <p class="value-text">Мы тщательно выбираем ткани и следим за каждой деталью — чтобы изделие радовало долго.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 28 C18 28 6 21 6 13 C6 9 9 6 13 6 C15.5 6 17.5 7.5 18 9 C18.5 7.5 20.5 6 23 6 C27 6 30 9 30 13 C30 21 18 28 18 28Z" stroke="#7B3F2E" stroke-width="1.2" fill="none"/></svg>
+        </div>
+        <h3 class="value-title">Любовь</h3>
+        <p class="value-text">Создаём с любовью к каждой покупательнице. Ваш комфорт и уверенность — наша главная цель.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection" id="collection">
+  <div class="collection-header fade-in">
+    <span class="section-label">Наши изделия</span>
+    <h2 class="section-title">Коллекция <em>Qamar Sulu</em></h2>
+    <p class="section-body" style="margin: 0 auto; text-align: center;">Посетите наш Instagram, чтобы увидеть все актуальные модели</p>
+  </div>
+  <div class="collection-grid" style="margin-top: 48px;">
+    <div class="collection-card fade-in">
+      <div class="collection-card-bg">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M20 16 L16 48 L48 48 L44 16 Z" stroke="#8A7A70" stroke-width="1.5" fill="none"/><path d="M24 16 C24 10 40 10 40 16" stroke="#8A7A70" stroke-width="1.5" fill="none"/></svg>
+        <div class="collection-placeholder-text">Абая</div>
+        <div class="collection-card-overlay">
+          <div class="collection-card-name">Элегантные абаи</div>
+        </div>
+      </div>
+      <div class="collection-meta">
+        <div class="collection-name">Абаи</div>
+        <div class="collection-tag">Традиция · Элегантность</div>
+      </div>
+    </div>
+    <div class="collection-card fade-in">
+      <div class="collection-card-bg" style="background: linear-gradient(145deg, #DDD4C8 0%, #C8B8A8 100%);">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="18" y="12" width="28" height="40" rx="2" stroke="#8A7A70" stroke-width="1.5" fill="none"/><path d="M18 28 L36 28" stroke="#8A7A70" stroke-width="1" stroke-dasharray="2 2"/><circle cx="32" cy="20" r="3" stroke="#8A7A70" stroke-width="1.2" fill="none"/></svg>
+        <div class="collection-placeholder-text">Платья</div>
+        <div class="collection-card-overlay">
+          <div class="collection-card-name">Платья</div>
+        </div>
+      </div>
+      <div class="collection-meta">
+        <div class="collection-name">Платья</div>
+        <div class="collection-tag">Грация · Скромность</div>
+      </div>
+    </div>
+    <div class="collection-card fade-in">
+      <div class="collection-card-bg" style="background: linear-gradient(145deg, #E4D8CC 0%, #D0C0B0 100%);">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><path d="M20 20 L44 20 L44 48 L20 48 Z" stroke="#8A7A70" stroke-width="1.5" fill="none"/><path d="M20 20 L12 32 L20 32" stroke="#8A7A70" stroke-width="1.5" fill="none"/><path d="M44 20 L52 32 L44 32" stroke="#8A7A70" stroke-width="1.5" fill="none"/></svg>
+        <div class="collection-placeholder-text">Костюмы</div>
+        <div class="collection-card-overlay">
+          <div class="collection-card-name">Костюмы</div>
+        </div>
+      </div>
+      <div class="collection-meta">
+        <div class="collection-name">Костюмы</div>
+        <div class="collection-tag">Стиль · Комфорт</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 52px;" class="fade-in">
+    <a href="https://www.instagram.com/ai.suluym" target="_blank" class="btn-primary" style="display: inline-flex;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Смотреть все в Instagram
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="contact-eyebrow">Связаться с нами</p>
+    <h2 class="contact-title">Напишите нам —<br>мы <em>ответим</em></h2>
+    <p class="contact-text">Интересует модель, размер или заказ? Напишите нам в WhatsApp или следите за новинками в Instagram — мы всегда рады помочь вам выбрать идеальный образ.</p>
+    <div class="contact-actions">
+      <a href="https://wa.me/77788327216" target="_blank" class="contact-btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        Написать в WhatsApp
+      </a>
+      <a href="https://www.instagram.com/ai.suluym" target="_blank" class="contact-btn-ig">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram @ai.suluym
+      </a>
+    </div>
+    <div class="contact-phone">
+      <a href="tel:+77788327216">+7 778 832 7216</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Qamar Sulu</div>
+  <div class="footer-copy">© 2025 Qamar Sulu. Все права защищены.</div>
+  <div class="footer-links">
+    <a href="https://wa.me/77788327216" target="_blank">WhatsApp</a>
+    <a href="https://www.instagram.com/ai.suluym" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
